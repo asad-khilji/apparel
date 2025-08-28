@@ -1,0 +1,139 @@
+/* --- Base --- */
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 24px;
+  color: #000;
+}
+.print-btn {
+  padding: 10px 20px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.catalog {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+}
+
+/* --- Card --- */
+.card {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0,0,0,.12);
+  padding: 18px 22px 10px;
+}
+
+/* --- Layout: images left, details right --- */
+.top {
+  display: grid;
+  grid-template-columns: 55% 45%; /* give more width to description */
+  column-gap: 20px;
+  align-items: start;
+}
+
+/* --- Left side (front image + info below) --- */
+.leftcol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* shift everything left */
+}
+
+.front {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  display: block;
+}
+
+.styleprice {
+  display: flex;
+  justify-content: flex-start;   /* keep left aligned */
+  gap: 25px;                     /* closer together than before */
+  font-weight: 900;
+  font-size: 26px;
+  margin: 10px 0 4px 6px;
+}
+
+.sizes {
+  font-size: 18px;
+  font-weight: 800;
+  margin-left: 6px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* --- Right side (back image + description under) --- */
+.rightcol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.back {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.details { text-align: left; width: 100%; }
+
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 6px 0 10px;
+  line-height: 1.25;
+}
+.title .wavy {
+  text-decoration: underline wavy #e11;
+  text-underline-offset: 3px;
+}
+
+.features {
+  margin: 0 0 8px 18px;
+  padding: 0;
+}
+.features li {
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+/* --- Print Styling --- */
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  body { padding: 0; }
+  .print-btn { display: none; }
+
+  .catalog { display: block; max-width: none; }
+
+  .card {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 10mm 8mm 6mm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: 0 0 12mm 0;
+  }
+
+  /* Two per page (stacked) */
+  .card:nth-child(2n+1) { page-break-before: always; }
+  .card:first-child { page-break-before: auto; }
+
+  .front { height: 340px; }
+  .back { height: 200px; }
+  .styleprice { font-size: 26px; gap: 20px; }
+  .sizes { font-size: 18px; }
+  .title { font-size: 22px; }
+  .features li { font-size: 18px; }
+}
+
+/* Avoid color shifts in print */
+img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }

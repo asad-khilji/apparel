@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "name": "Mens Premium Leather Jacket",
+      "sizes": "S-5XL",
+      "code": "10.ZO",
+      "price": "$75.00",
+      "images": [
+        "https://unikinternational.com/cdn/shop/files/Brando_-_Mens_Motorcycle_Biker_Leather_Jacket.jpg?v=1752784256",
+        "https://unikinternational.com/cdn/shop/files/010.ZO_-_.Mens_Motorcycle_Biker_Leather_Jacket..jpg?v=1752784231"
+      ],
+      "features": [
+        "3 outside pockets",
+        "2 inside pockets",
+        "Silver hardware",
+        "Zip out liner"
+      ]
+    },
+    {
+      "name": "Dont Tread on Me T-Shirt",
+      "sizes": "M-5XL",
+      "code": "CT-508",
+      "price": "$12.00",
+      "images": [
+        "https://unikinternational.com/cdn/shop/files/Brando_-_Mens_Motorcycle_Biker_Leather_Jacket.jpg?v=1752784256",
+        "https://unikinternational.com/cdn/shop/files/010.ZO_-_.Mens_Motorcycle_Biker_Leather_Jacket..jpg?v=1752784231"
+      ],
+      "features": [
+        "100% Cotton",
+        "Screen printed design",
+        "Classic fit"
+      ]
+    }
+  ]
+}
