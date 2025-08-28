@@ -24,25 +24,25 @@ body {
 
 /* --- Card --- */
 .card {
-  border-radius: 12px;
+  border: 1px solid #333; /* border like your screenshot */
+  border-radius: 4px;
   background: #fff;
-  box-shadow: 0 4px 18px rgba(0,0,0,.12);
-  padding: 18px 22px 10px;
+  padding: 18px 22px 14px;
 }
 
-/* --- Layout: images left, details right --- */
+/* --- Layout: front left, details right --- */
 .top {
   display: grid;
-  grid-template-columns: 55% 45%; /* give more width to description */
+  grid-template-columns: 55% 45%;
   column-gap: 20px;
   align-items: start;
 }
 
-/* --- Left side (front image + info below) --- */
+/* --- Left side (front image only) --- */
 .leftcol {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* shift everything left */
+  align-items: flex-start;
 }
 
 .front {
@@ -52,33 +52,28 @@ body {
   display: block;
 }
 
-.styleprice {
-  display: flex;
-  justify-content: flex-start;   /* keep left aligned */
-  gap: 25px;                     /* closer together than before */
-  font-weight: 900;
-  font-size: 26px;
-  margin: 10px 0 4px 6px;
-}
-
-.sizes {
-  font-size: 18px;
-  font-weight: 800;
-  margin-left: 6px;
-  margin-bottom: 6px;
-  text-align: left;
-}
-
-/* --- Right side (back image + description under) --- */
+/* --- Right side (style/price + back + description) --- */
 .rightcol {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+}
+
+/* style + price bar at top */
+.styleprice {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 900;
+  font-size: 26px;
+  margin-bottom: 10px;
+  margin-left: -25px;
 }
 
 .back {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: contain;
   display: block;
   margin-bottom: 12px;
@@ -129,11 +124,14 @@ body {
 
   .front { height: 340px; }
   .back { height: 200px; }
-  .styleprice { font-size: 26px; gap: 20px; }
-  .sizes { font-size: 18px; }
+  .styleprice { font-size: 26px; }
   .title { font-size: 22px; }
   .features li { font-size: 18px; }
 }
 
 /* Avoid color shifts in print */
 img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.title .wavy {
+  text-decoration: none;   /* remove wavy underline */
+}
