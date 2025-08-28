@@ -17,17 +17,18 @@ fetch('products.json')
         <div class="top">
           <div class="leftcol">
             <img class="front" src="${front}" alt="${p.name} - front">
+          </div>
+
+          <div class="rightcol">
             <div class="styleprice">
               <span>${p.code || ''}</span>
               <span>${p.price || ''}</span>
             </div>
-            <div class="sizes">Sizes: ${p.sizes || p.size || ''}</div>
-          </div>
-
-          <div class="rightcol">
             ${back ? `<img class="back" src="${back}" alt="${p.name} - back">` : ''}
             <div class="details">
-              <h3 class="title"><span class="wavy">${firstWord || ''}</span> ${rest}</h3>
+              <h3 class="title" spellcheck="false">
+                <span class="wavy">${firstWord || ''}</span> ${rest}
+              </h3>
               ${
                 (p.features && p.features.length)
                   ? `<ul class="features">${p.features.map(f => `<li>${f}</li>`).join('')}</ul>`
